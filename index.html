@@ -31,10 +31,19 @@
           var renderer = new THREE.WebGLRenderer();
           renderer.setSize( window.innerWidth, window.innerHeight );
           document.body.appendChild( renderer.domElement );
+
+
+
+          // Anon function for loop/display
+          function animate() {
+            requestAnimationFrame( animate );
+            renderer.render( scene, camera );
+          }
+          animate();
         </script>
 
       </div>
-      <div class="vertical-line" style="height: 40em;"></div>
+      <div class="vertical-line" style="height: 35em;"></div>
       <div class = "col">
           Insert Graph here
         </div>

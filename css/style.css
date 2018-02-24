@@ -5,6 +5,7 @@ body {
   padding: 0rem;
   background: linear-gradient(90deg, #001230 21px, transparent 1%) center, linear-gradient(#001230 21px, transparent 1%) center,#76e0d0;
   background-size: 22px 22px;
+  margin: 1px;
 }
 
 hr {
@@ -38,38 +39,9 @@ div.vertical-line{
 	100% { opacity: 1; }
 }
 
-div.vertical-line{
-  width: 1px; /* Line width */
-  background-color: black; /* Line color */
-  height: 100%; /* Override in-line if you want specific height. */
-  float: left; /* Causes the line to float to left of content. 
-    You can instead use position:absolute or display:inline-block
-    if this fits better with your design */
-}
-
 /* Buttons
 */
 
-body{margin:40px;}
-
-
-.btn-circle {
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  padding: 6px 0;
-  font-size: 12px;
-  line-height: 1.428571429;
-  border-radius: 15px;
-}
-.btn-circle.btn-lg {
-  width: 50px;
-  height: 50px;
-  padding: 10px 16px;
-  font-size: 18px;
-  line-height: 1.33;
-  border-radius: 25px;
-}
 .btn-circle.btn-xl {
   width: 70px;
   height: 70px;
