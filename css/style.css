@@ -2,10 +2,10 @@
 body {
   background-color: #001230;
   color: aliceblue;
-  padding: 0rem;
+  padding: 1rem;
   background: linear-gradient(90deg, #001230 21px, transparent 1%) center, linear-gradient(#001230 21px, transparent 1%) center,#76e0d0;
   background-size: 22px 22px;
-  margin: 1px;
+  margin: 0px;
 }
 
 hr {
@@ -45,8 +45,12 @@ div.vertical-line{
 .btn-circle.btn-xl {
   width: 70px;
   height: 70px;
+  margin-top: 10px;
   padding: 10px 16px;
   font-size: 24px;
   line-height: 1.33;
   border-radius: 35px;
 }
+
+/* Graph */
+

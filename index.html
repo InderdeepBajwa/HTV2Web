@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="js/three.js"></script>
 
     <link rel="stylesheet" href="css/style.css">
 
@@ -18,37 +19,47 @@
       <element class = "flashit" >Connected</element>
     </h2>
 <hr>
-<div class="vertical-line"></div>
+<section>
     <div class = "row">
-      <div class = "col-8">
+      <div id = "animation" class = "col-8">
         Insert picture here
+        <script>
+          //JS goes here
+            
+          // Creating the scene
 
-        <script src="js/three.js"></script>
-        <script>//JS goes here
-          var scene = new THREE.scene();
-          var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-
+          var scene = new THREE.Scene();
+          var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+          
           var renderer = new THREE.WebGLRenderer();
-          renderer.setSize( window.innerWidth, window.innerHeight );
+          renderer.setSize( window.innerWidth/2, window.innerHeight/2 );
           document.body.appendChild( renderer.domElement );
 
+          // Creating a cube
+          var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+          var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+          var cube = new THREE.Mesh( geometry, material );
+          scene.add( cube );
+          
+          camera.position.z = 5;
 
-
-          // Anon function for loop/display
           function animate() {
-            requestAnimationFrame( animate );
-            renderer.render( scene, camera );
-          }
-          animate();
+                  requestAnimationFrame( animate );
+                  cube.rotation.x += 0.1;
+                  cube.rotation.y += 0.1;
+                  renderer.render( scene, camera );
+              }
+              animate();
         </script>
-
       </div>
-      <div class="vertical-line" style="height: 35em;"></div>
-      <div class = "col">
+      
+      <div class = "col sm-3" style="vertical-align:top; display:inline;">
           Insert Graph here
+
         </div>
-    </div>
-    
+        </div>
+      </div>
+      </section>
     <!-- Gestures -->
 
     <center>
