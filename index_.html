@@ -1,52 +1,21 @@
+
 <!DOCTYPE html>
-<html class = "loading">
-  <head>
-    <meta charset="utf-8">
-    <title>Dynamic Analysis</title>
-    <!-- Adding source files -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-	<script src="js/three.js"></script>
-	
-
-    <link rel="stylesheet" href="css/style.css">
-
-  </head>
-  <body>
-	  
-	<script>
-		// IE10+
-		document.getElementsByTagName( "html" )[0].classList.remove( "loading" );
-
-		// All browsers
-		document.getElementsByTagName( "html" )[0].className.replace( /loading/, "" );
-
-		// Or with jQuery
-		$( "html" ).removeClass( "loading" );
-
-	</script>
-
-	<!-- animation elements -->
-	
-	  	<div class="view">
-			<div class="plane main">
-			<div class="circle"></div>
-			<div class="circle"></div>
-			<div class="circle"></div>
-			<div class="circle"></div>
-			<div class="circle"></div>
-			<div class="circle"></div>
-			</div>
-		</div>
-    <h2>
-      <element class = "flashit" >Fetching</element>
-    </h2>
-<hr>
-<section>
-    <div class = "row">
-      <div id = "animation" class = "col-8">
-		<h2>Real-Time Graphical Analysis</h2>
+<html lang="en">
+	<head>
+		<title>ThreeArm</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			body {
+				background:#fff;
+				padding:0;
+				margin:0;
+				font-weight: bold;
+				overflow:hidden;
+			}
+		</style>
+	</head>
+	<body>
 
 		<script src="js/three.min.js"></script>
 		<script src="js/lib.js"></script>
@@ -65,8 +34,8 @@
 
 			var mouseX = 0, mouseY = 0;
 
-			var windowHalfX = window.innerWidth / 2;
-			var windowHalfY = window.innerHeight / 2;
+			var windowHalfX = window.innerWidth;
+			var windowHalfY = window.innerHeight;
 
 			var lineMaterial, material, geometry, controls;
 
@@ -96,10 +65,10 @@
 				container.addEventListener( 'mousemove', onDocumentMouseMove, false );
 				document.body.appendChild( container );
 
-				camera = new THREE.PerspectiveCamera( 60, window.innerWidth/ window.innerHeight, 1, 10000 );
+				camera = new THREE.PerspectiveCamera( 60, 1.5, 1, 10000 );
 				
 				camera.position.add(new THREE.Vector3(-50, 150, 0))
- 
+
 
 				controls = new THREE.TrackballControls( camera );
 				controls.addEventListener( 'change', render );
@@ -231,9 +200,9 @@
 
 
 				renderer = new THREE.WebGLRenderer();
-				renderer.setClearColor( 0xffffff );
-				renderer.setPixelRatio( 20 );
-				renderer.setSize( (window.innerWidth/2), (window.innerHeight/2) );
+				renderer.setClearColor( 0x000000 );
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
 				renderer.sortObjects = false;
 
 				container.appendChild( renderer.domElement );
@@ -244,8 +213,8 @@
 
 			function onWindowResize() {
 
-				windowHalfX = window.innerWidth / 2;
-				windowHalfY = window.innerHeight / 2;
+				windowHalfX = window.innerWidth;
+				windowHalfY = window.innerHeight;
 
 				camera.aspect = window.innerWidth / window.innerHeight;
 				camera.updateProjectionMatrix();
@@ -400,44 +369,6 @@
 			}
 
 		</script>
-      </div>
 
-      <div class = "col sm-3" style="vertical-align:top; display:inline;">
-          Insert Graph here
-
-        </div>
-        </div>
-      </div>
-      </section>
-	<!-- Gestures -->
-	<hr>
-	<h2>Current Input</h2>
-
-    <center>
-      <button type="button" class="btn btn-primary btn-circle btn-xl"><a>H1</a></button>
-      <button type="button" class="btn btn-primary btn-circle btn-xl"><a>H2</a></button>
-      <button type="button" class="btn btn-primary btn-circle btn-xl"><a>H3</a></button>
-      <button type="button" class="btn btn-primary btn-circle btn-xl"><a>H4</a></button>
-      <button type="button" class="btn btn-primary btn-circle btn-xl"><a>H5</a></button>
-	  </center>
-	  
-	  <script>
-		  
-	  </script>
-
-	<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
-	<script>
-	// Initialize Firebase
-	var config = {
-		apiKey: "AIzaSyBTHw32LbzphDFfTgRW7CjEWFUg1i-Ck18",
-		authDomain: "armsync.firebaseapp.com",
-		databaseURL: "https://armsync.firebaseio.com",
-		projectId: "armsync",
-		storageBucket: "",
-		messagingSenderId: "334031887550"
-	};
-	firebase.initializeApp(config);
-	</script>
-
-  </body>
+	</body>
 </html>
