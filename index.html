@@ -9,6 +9,8 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="js/three.js"></script>
 	
+	<script src="/libs/dat.gui.min.js"></script>
+	<script src="/libs/OrbitControls.js"></script>
 
     <link rel="stylesheet" href="css/style.css">
 
@@ -16,16 +18,20 @@
   <body>
 	  
 	<script>
-		// IE10+
-		document.getElementsByTagName( "html" )[0].classList.remove( "loading" );
+	// IE10+
+document.getElementsByTagName( "html" )[0].classList.remove( "loading" );
 
-		// All browsers
-		document.getElementsByTagName( "html" )[0].className.replace( /loading/, "" );
+// All browsers
+document.getElementsByTagName( "html" )[0].className.replace( /loading/, "" );
 
-		// Or with jQuery
-		$( "html" ).removeClass( "loading" );
+// Or with jQuery
+$( "html" ).removeClass( "loading" );
 
-	</script>
+</script>
+		
+		<script>
+			
+		</script>
 
 	<!-- animation elements -->
 	
@@ -231,9 +237,9 @@
 
 
 				renderer = new THREE.WebGLRenderer();
-				renderer.setClearColor( 0xffffff );
+				renderer.setClearColor( 0x24527f );
 				renderer.setPixelRatio( 20 );
-				renderer.setSize( (window.innerWidth/2), (window.innerHeight/2) );
+				renderer.setSize( window.innerWidth/2, window.innerHeight/2 );
 				renderer.sortObjects = false;
 
 				container.appendChild( renderer.domElement );
